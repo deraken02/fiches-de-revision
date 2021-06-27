@@ -16,7 +16,8 @@ Le principe repose sur des fiches de révisions à deux faces, l'une avec un ter
 
 * Catégories de cartes, des cartes où l'interrogation ne se fait que dans un seul sens. 
 * Progression dans les cartes, par date et par réussite
-
+* Recherche de fiche
+* Interface graphique
 
 # Versions envisagées 
 
