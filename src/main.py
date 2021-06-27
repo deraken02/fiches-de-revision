@@ -7,6 +7,7 @@ def main():
     print("[t] Pour créer un thème")
     print("[f] Pour créer une fiche")
     print("[h] Pour accéder à l'aide")
+    print("[q] Pour quitter le logiciel")
     choisi=True
     while(choisi):
         choix=input("Votre choix: ")
@@ -22,6 +23,9 @@ def main():
         elif choix=='h':
             choisi=False
             aide()
+        elif choix=="q":
+            choisi=False
+            end()
         else:
             print("Ce choix n'existe pas")
                 
@@ -31,7 +35,7 @@ def revise():
     """
     ntheme=input("Thème: ")
     c=challenge.challenge(ntheme)
-    print(c.start())
+    print("Votre score total est de "+c.start())
     main()
 
 def thème():
@@ -62,7 +66,12 @@ def aide():
     """
     print("Cette section est en cours de construction")
     main()
-    
+
+def end():
+    """
+    Ferme le programme
+    """
+    return 0
     
 print("Bienvenue sur le logiciel de révision")
 main()

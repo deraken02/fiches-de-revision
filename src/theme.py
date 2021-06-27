@@ -20,6 +20,7 @@ class theme:
         """
         Fonction qui créé un thème ssi il n'existe pas déjà
         """
+        os.system("clear")
         path="theme/"+self.theme
         if (os.path.exists(path)):
             print("Ce thème existe déjà choisissez un autre nom ou ajoutez y des cartes")

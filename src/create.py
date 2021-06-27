@@ -22,6 +22,7 @@ class create:
         """
         Fonction ajoutant la fiche au theme
         """
+        os.system("clear")
         path="theme/"+self.theme
         if (os.path.exists(path)):
             with open(path, 'a') as f:

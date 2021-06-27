@@ -23,6 +23,7 @@ class challenge:
         Lance le challenge
         :return: (int) le score
         """
+        os.system("clear")
         path="theme/"+self.theme
         if (os.path.exists(path)):
             self.creerdico(path)
@@ -58,34 +59,46 @@ class challenge:
         questionsc=list(self.cle.keys())
         questionsv=list(self.cle.values())
         score=0
+        i=0
         while((questionsv!=list()) or (questionsc!=list())):
-            questionsrestante=len(questionsv)+len(questionsc)
-            q=randint(0,questionsrestante)-1
-            if ((q<len(questionsv))and (questionsv!=list())):
-                question=questionsv[q]
-                reponse=input(question+': ')
+            
+            i+=1
+            q=list()
+            if questionsv!=list():
+                q.append(randint(0,len(questionsv)-1))
+            else:
+                q.append(0)
+            if questionsc!=list():
+                q.append(randint(0,len(questionsc)-1))
+            else:
+                q.append(0)
+            if questionsv==list():
+                sens=1
+            elif questionsc==list():
+                sens=0
+            else:
+                sens=randint(0,1)
+            if sens==0:
+                question=questionsv[q[sens]]
+                reponse=input(question+" : ")
                 correction=self.valeur[question]
-                if reponse==correction:
-                    score+=1
+                if correction==reponse:
                     print("Bonne réponse")
+                    score+=1
                 else:
-                    score-=1
                     print("Mauvaise réponse : "+correction)
+                    score-=1
                 questionsv.remove(question)
             else:
-                if(questionsv!=list()):
-                    q=q-len(questionsv)
-                else:
-                    q-=1
-                question=questionsc[q]
-                reponse=input(question+': ')
-                correction=str(self.cle[question])
-                if reponse==correction:
-                    score+=1
+                question=questionsc[q[sens]]
+                reponse=input(question+" : ")
+                correction=self.cle[question]
+                if correction==reponse:
                     print("Bonne réponse")
+                    score+=1
                 else:
-                    score-=1
                     print("Mauvaise réponse : "+correction)
+                    score-=1
                 questionsc.remove(question)
-            
-        return score
+            os.system("clear")
+        return str(score)+"/"+str(i)
