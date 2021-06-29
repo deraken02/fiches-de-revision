@@ -27,6 +27,7 @@ Le principe repose sur des fiches de révisions à deux faces, l'une avec un ter
 * Interrogation sur l'une des deux faces. L'utilisateur doit restistuer la deuxième face dans un formulaire.
 * Pourcentage de réussite
 * Recherche de fiche 
+* Impossibilité de créer deux fiches identiques
 
 # Versions envisagées 
 

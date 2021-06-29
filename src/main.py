@@ -64,7 +64,6 @@ def fiche():
         face2=input("Seconde face: ")
         c=create.create(face1,face2,ntheme)
         c.createfiche()
-        print("Votre fiche à bien été créé")
         print("Voulez-vous recréer une carte oui [y] ou none [n]")
         if (input()=="n"):
             encore=False
