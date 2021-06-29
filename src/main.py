@@ -1,9 +1,11 @@
+import search
 import create
 import challenge
 import theme
 
 def main():
     print("[r] Pour commencer à révision")
+    print("[s] Rechercher une fiche")
     print("[t] Pour créer un thème")
     print("[f] Pour créer une fiche")
     print("[h] Pour accéder à l'aide")
@@ -14,6 +16,9 @@ def main():
         if choix=='r':
             choisi=False
             revise()
+        elif choix=='s':
+            choisi=False
+            recherche()
         elif choix=='t':
             choisi=False
             thème()
@@ -65,6 +70,22 @@ def fiche():
             encore=False
     main()
 
+def recherche():
+    """
+    Lance la recherche
+    """
+    clue=input("Terme recherché: ")
+    entier=input("Le terme correspond-il à toute la face oui [o] ou non [n]: ")
+    theme=input("Recherche dans un thème oui [o] ou non [n]? ")
+    entier=entier=="o"
+    if theme=="o":
+        theme=input("Dans quel thème? ")
+    else:
+        theme=""
+    s=search.search(clue,entier,theme)
+    print(s.start())
+    main()
+    
 def aide():
     """
     Affiche l'aide
@@ -78,5 +99,6 @@ def end():
     """
     return 0
     
+
 print("Bienvenue sur le logiciel de révision")
 main()

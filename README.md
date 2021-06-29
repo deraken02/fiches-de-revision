@@ -16,8 +16,17 @@ Le principe repose sur des fiches de révisions à deux faces, l'une avec un ter
 
 * Catégories de cartes, des cartes où l'interrogation ne se fait que dans un seul sens. 
 * Progression dans les cartes, par date et par réussite
+* Impossibilité de créer deux fiches identiques
 * Recherche de fiche
 * Interface graphique
+
+# Fonctions implémentées
+
+* Plusieurs thèmes possibles. Le nom du thème doit être unique
+* Création de fiches par thèmes.
+* Interrogation sur l'une des deux faces. L'utilisateur doit restistuer la deuxième face dans un formulaire.
+* Pourcentage de réussite
+* Recherche de fiche 
 
 # Versions envisagées 
 
