@@ -52,12 +52,17 @@ def fiche():
     """
     Lance la création d'une fiche
     """
+    encore=True
     ntheme=input("Thème: ")
-    face1=input("Première face: ")
-    face2=input("Seconde face ")
-    c=create.create(face1,face2,ntheme)
-    c.createfiche()
-    print("Votre fiche à bien été créé")
+    while encore:
+        face1=input("Première face: ")
+        face2=input("Seconde face: ")
+        c=create.create(face1,face2,ntheme)
+        c.createfiche()
+        print("Votre fiche à bien été créé")
+        print("Voulez-vous recréer une carte oui [y] ou none [n]")
+        if (input()=="n"):
+            encore=False
     main()
 
 def aide():

@@ -83,9 +83,11 @@ class challenge:
                 reponse=input(question+" : ")
                 correction=self.valeur[question]
                 if correction==reponse:
+                    os.system("clear")
                     print("Bonne réponse")
                     score+=1
                 else:
+                    os.system("clear")
                     print("Mauvaise réponse : "+correction)
                     score-=1
                 questionsv.remove(question)
@@ -94,11 +96,12 @@ class challenge:
                 reponse=input(question+" : ")
                 correction=self.cle[question]
                 if correction==reponse:
+                    os.system("clear")
                     print("Bonne réponse")
                     score+=1
                 else:
+                    os.system("clear")
                     print("Mauvaise réponse : "+correction)
                     score-=1
                 questionsc.remove(question)
-            os.system("clear")
         return str(score)+"/"+str(i)
