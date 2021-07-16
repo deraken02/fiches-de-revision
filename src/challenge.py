@@ -47,8 +47,11 @@ class challenge:
             for i in lignes:
                 i=i[:-1]
                 tmp=i.split(':')
-                dic1[tmp[0]]=tmp[1]
-                dic2[tmp[1]]=tmp[0]
+                if (len(tmp)==2) or (tmp[2]==0):
+                    dic1[tmp[0]]=tmp[1]
+                    dic2[tmp[1]]=tmp[0]
+                else:
+                    dic1[tmp[0]]=tmp[1]
         self.cle=dic1
         self.valeur=dic2
     
@@ -57,7 +60,7 @@ class challenge:
         Lance le challenge
         """
         questionsc=list(self.cle.keys())
-        questionsv=list(self.cle.values())
+        questionsv=list(self.valeur.keys())
         score=0
         i=0
         while((questionsv!=list()) or (questionsc!=list())):

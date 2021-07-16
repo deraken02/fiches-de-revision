@@ -7,18 +7,20 @@ class create:
     >>> fiche=create("Bataille de Marignan","1515","Histoire")
     >>> fiche.createfiche()
     """
-    def __init__(self,key, value,theme):
+    def __init__(self,key, value,theme, mode):
         """
         Constructeur de la classe create
         :param key: (str) clé de la fiche
         :param value: (str) valeur/réponse de la fiche
         :param theme: (str) le thème de la fiche
+        :param mode: (str) Le type de carte 0= on peut questionnner les deux côtés 1 seulement la première face
         :return: None
         :CU: Le thème doit déjà être créé pour y ajouter une fiche
         """
         self.key=key
         self.value=value
         self.theme=theme
+        self.mode=mode
         
     def exists(self):
         """
@@ -43,7 +45,7 @@ class create:
         e=self.exists()
         if (os.path.exists(path))and not e:
             with open(path, 'a') as f:
-                ligne=self.key+':'+self.value+'\n'
+                ligne=self.key+':'+self.value+':'+self.mode+'\n'
                 f.write(ligne)
                 print("La fiche a bien été créée")
         else:

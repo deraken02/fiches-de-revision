@@ -62,9 +62,14 @@ def fiche():
     while encore:
         face1=input("Première face: ")
         face2=input("Seconde face: ")
-        c=create.create(face1,face2,ntheme)
+        mode=input("Les deux côtés de la carte peuvent tomber? oui [y] ou non [n]")
+        if (mode=="n"):
+            print("Seule la première face sera intérrogée\n")
+            c=create.create(face1,face2,ntheme,'1')
+        else:
+            c=create.create(face1,face2,ntheme,'0')
         c.createfiche()
-        print("Voulez-vous recréer une carte oui [y] ou none [n]")
+        print("Voulez-vous recréer une carte? oui [y] ou non [n]")
         if (input()=="n"):
             encore=False
     main()
